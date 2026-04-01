@@ -3,44 +3,72 @@
 <head>
     <title>Amit Saree Store</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <style>
         body {
             font-family: Arial;
             margin: 0;
-            background: #f5f5f5;
+            background: #f2f2f2;
         }
+
         header {
             background: #ff3f6c;
             color: white;
             padding: 15px;
             text-align: center;
         }
+
         .container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            padding: 20px;
         }
+
         .card {
             background: white;
-            margin: 15px;
-            padding: 15px;
             border-radius: 10px;
-            width: 220px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            text-align: center;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: 0.3s;
         }
-        img {
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card img {
             width: 100%;
-            border-radius: 10px;
+            height: 250px;
+            object-fit: cover;
         }
+
+        .card-body {
+            padding: 15px;
+        }
+
+        .title {
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .price {
+            color: green;
+            margin: 10px 0;
+        }
+
         button {
+            width: 100%;
+            padding: 10px;
             background: #ff3f6c;
             color: white;
             border: none;
-            padding: 10px;
-            margin-top: 10px;
             border-radius: 5px;
             cursor: pointer;
+        }
+
+        button:hover {
+            background: #e6325c;
         }
     </style>
 </head>
@@ -54,17 +82,25 @@
 <div class="container">
 
     <div class="card">
-        <img src="https://via.placeholder.com/200">
-        <h3>Silk Saree</h3>
-        <p>Price: ₹999</p>
-        <button onclick="copyText('Silk Saree - ₹999')">Copy Details</button>
+        <img src="https://via.placeholder.com/300">
+        <div class="card-body">
+            <div class="title">Silk Purple Saree</div>
+            <div class="price">₹999</div>
+            <button onclick="copyText('Silk Purple Saree | Price ₹999 | Premium Quality')">
+                Copy Details
+            </button>
+        </div>
     </div>
 
     <div class="card">
-        <img src="https://via.placeholder.com/200">
-        <h3>Designer Saree</h3>
-        <p>Price: ₹1299</p>
-        <button onclick="copyText('Designer Saree - ₹1299')">Copy Details</button>
+        <img src="https://via.placeholder.com/300">
+        <div class="card-body">
+            <div class="title">Designer Red Saree</div>
+            <div class="price">₹1299</div>
+            <button onclick="copyText('Designer Red Saree | Price ₹1299 | Party Wear')">
+                Copy Details
+            </button>
+        </div>
     </div>
 
 </div>
